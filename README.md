@@ -1,85 +1,203 @@
-# Uday's Portfolio
+# 🌐 Uday's Portfolio
 
-A personal portfolio website for **Gella Uday Kumar** — DevOps Engineer | Cloud Enthusiast | Automating the Future.
+A personal portfolio website of **Gella Uday Kumar** showcasing my journey as a **DevOps Engineer**, Cloud Enthusiast, and Automation Learner.
 
-Built with plain HTML, CSS, and JavaScript — no frameworks, no build step. Clone it, open it, and it just works.
+This project is more than just a portfolio website—it's deployed using real-world DevOps practices on AWS with a custom domain, Nginx, and HTTPS.
 
-🔗 **Live Demo:** https://Gella-Uday-kumar.github.io/portfolio/
-*(replace `Gella-Uday-kumar` / `portfolio` above if your username or repo name is different)*
+---
 
-## Preview
+## 🚀 Live Website
+
+**Portfolio:** https://udaydev.site
+
+---
+
+## 📸 Preview
+
+Below is a preview of the portfolio homepage hosted on AWS EC2 using Nginx with a custom domain and HTTPS.
 
 ![Portfolio Preview](assets/preview.png)
 
-## Features
+---
 
-- Responsive dark-themed design with animated gradient accents and a glowing profile ring
-- Light / dark theme toggle
-- Sections: Home, About, Skills, Experience, Projects, Certifications, Contact
-- Scroll-spy navigation that highlights the active section
-- Mobile-friendly hamburger menu
-- Clickable contact details (email, phone, location) and social links (GitHub, LinkedIn)
-- Downloadable resume button
-- Contact form with client-side confirmation message
+# ✨ Features
 
-## Tech Stack
+- Responsive modern portfolio
+- Dark theme UI
+- Mobile-friendly design
+- Animated gradients
+- Smooth scrolling navigation
+- Download Resume
+- Certifications section
+- Projects section
+- Contact information
+- GitHub & LinkedIn integration
+- HTTPS secured website
+- Custom domain
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
 
 - HTML5
-- CSS3 (custom properties, Grid, Flexbox, animations)
-- Vanilla JavaScript (no dependencies)
-- [Google Fonts](https://fonts.google.com/) — Poppins & Inter
+- CSS3
+- JavaScript
 
-## Project Structure
+### DevOps & Cloud
+
+- AWS EC2 (Ubuntu)
+- Nginx
+- GoDaddy DNS
+- Let's Encrypt SSL
+- Git
+- GitHub
+- SSH
+
+---
+
+# ☁️ Deployment Architecture
+
+```
+User Browser
+      │
+      ▼
+https://udaydev.site
+      │
+      ▼
+GoDaddy DNS
+      │
+      ▼
+AWS EC2 (Ubuntu)
+      │
+      ▼
+Nginx Web Server
+      │
+      ▼
+Portfolio Website
+```
+
+---
+
+# 📂 Project Structure
 
 ```
 portfolio/
-├── index.html              # Main page markup
-├── style.css                # All styling
-├── script.js                 # Theme toggle, nav, scroll-spy, contact form
+│
 ├── assets/
-│   ├── profile.png           # Profile photo
-│   ├── preview.png            # Screenshot used in this README
-│   └── Gella_Uday_Kumar_Resume.pdf   # Downloadable resume
+│   ├── profile.png
+│   ├── preview.png
+│   └── Gella_Uday_Kumar_Resume.pdf
+│
+├── index.html
+├── style.css
+├── script.js
 └── README.md
 ```
 
-## Getting Started
+---
 
-### Run locally
+# 🚀 Deployment Steps
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/Gella-Uday-kumar/portfolio.git
-   cd portfolio
-   ```
-2. Open `index.html` directly in your browser, **or** serve it locally for the best experience (e.g. with the VS Code "Live Server" extension, or):
-   ```bash
-   python3 -m http.server 8000
-   ```
-   Then visit `http://localhost:8000`.
+### 1. Clone Repository
 
-### Deploy on GitHub Pages
+```bash
+git clone https://github.com/Gella-Uday-kumar/portfolio.git
+```
 
-1. Push this project to a GitHub repository.
-2. Go to **Settings → Pages** in your repo.
-3. Under "Build and deployment", set **Source** to `Deploy from a branch`, choose the `main` branch and `/ (root)` folder, then save.
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>/` within a minute or two.
+---
 
-## Customization
+### 2. Copy Portfolio to EC2
 
-- **Resume:** Replace `assets/Gella_Uday_Kumar_Resume.pdf` with an updated file (keep the same filename, or update the `href` in the Download Resume button in `index.html`).
-- **Photo:** Replace `assets/profile.png` with a new image (same filename, or update the `src` in `index.html`).
-- **Links:** GitHub and LinkedIn URLs are set in the navbar and Contact section of `index.html` — update them if your usernames change.
-- **Colors:** All colors are defined as CSS custom properties at the top of `style.css` under `:root`.
+```bash
+scp -r portfolio ubuntu@<EC2-Public-IP>:/var/www/html
+```
 
-## Contact
+---
 
-- 📧 gellaudaykumar2329@gmail.com
-- 📱 +91 9078702554
-- 💼 [LinkedIn](https://www.linkedin.com/in/uday-kumar-612743253)
-- 🐙 [GitHub](https://github.com/Gella-Uday-kumar)
-- 📍 Bengaluru, India
+### 3. Configure Nginx
 
-## License
+- Install Nginx
+- Configure Server Block
+- Point document root to `/var/www/html`
 
-This project is free to use and adapt for personal portfolio purposes.
+---
+
+### 4. Configure Domain
+
+Purchased domain from GoDaddy
+
+Configured:
+
+- A Record → EC2 Public IP
+- CNAME → www
+
+---
+
+### 5. Enable HTTPS
+
+Installed
+
+- Certbot
+- Let's Encrypt SSL
+
+Generated SSL certificate for
+
+- udaydev.site
+- www.udaydev.site
+
+Configured automatic renewal.
+
+---
+
+# 📚 Skills Demonstrated
+
+- Linux Administration
+- AWS EC2
+- Nginx
+- Domain Configuration
+- DNS Management
+- HTTPS Configuration
+- SSL Certificates
+- Git & GitHub
+- SSH
+- Web Hosting
+
+---
+
+# 📈 Future Improvements
+
+- Docker Containerization
+- Jenkins CI/CD
+- GitHub Actions
+- Terraform
+- Kubernetes Deployment
+- Prometheus Monitoring
+- Grafana Dashboard
+
+---
+
+# 👨‍💻 About Me
+
+**Gella Uday Kumar**
+
+DevOps Engineer | Cloud Enthusiast | AWS Learner
+
+📍 Bengaluru, India
+
+📧 gellaudaykumar2329@gmail.com
+
+---
+
+## 🌐 Connect With Me
+
+- Portfolio: https://udaydev.site
+- GitHub: https://github.com/Gella-Uday-kumar
+- LinkedIn: https://www.linkedin.com/in/gella-uday-kumar/
+
+---
+
+# ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub.
