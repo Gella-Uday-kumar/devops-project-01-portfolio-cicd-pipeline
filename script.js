@@ -79,26 +79,4 @@ document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// =========================================
-// CONTACT FORM (demo submit handler)
-// =========================================
-const contactForm = document.getElementById('contactForm');
-const formNote = document.getElementById('formNote');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name = contactForm.querySelector('input[type="text"]').value.trim();
-
-  if (name) {
-    formNote.textContent = `Thanks, ${name}! Your message has been noted. I'll get back to you soon — for now, please also reach out directly via email or LinkedIn.`;
-  } else {
-    formNote.textContent = 'Thanks! Your message has been noted.';
-  }
-
-  contactForm.reset();
-
-  setTimeout(() => {
-    formNote.textContent = '';
-  }, 6000);
-});
+// Contact form is info-only in this layout — no form handler needed.
